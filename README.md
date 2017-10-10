@@ -1,2 +1,2 @@
-# shuframework-ssm-maven
-shuframework 框架 基于spring_springmvc_mybatis_mybatisplus_maven
+# ssm-maven
+基于spring_springmvc_mybatis_mybatisplus_maven的初始独立项目，可能存在不同版本
