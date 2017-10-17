@@ -14,35 +14,16 @@
     </context-param> -->
     <!-- Spring的log4j监听器,需要在ContextLoaderListener之前，
 	不然报警告：No appenders could be found for logger (org.springframework.web.context.ContextLoader) -->
-	<!-- log4j的配置 -->
-    <!-- <listener>
+    <!-- log4j的配置 -->
+    <listener>
       <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-    </listener> -->
-    
-    <!-- log4j2-begin --> 
-    <!-- 注意！ 由于使用3.0+版本web.xml log4j2 会自动注册 如果使用2.5版本xml 需要手动注册 以下代码-->
-    <!-- <listener>
-        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
     </listener>
-
-    <filter>
-        <filter-name>log4jServletFilter</filter-name>
-        <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>log4jServletFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-        <dispatcher>INCLUDE</dispatcher>
-        <dispatcher>ERROR</dispatcher>
-    </filter-mapping> -->
-    <!-- log4j2-end -->
     
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
     </listener>
     
+      <!-- classpath带上*，不然报找不到文件,在maven环境下可以不用 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>  
         <!--由于没有默认applicationContext.xml文件，需要指定相应文件 -->
