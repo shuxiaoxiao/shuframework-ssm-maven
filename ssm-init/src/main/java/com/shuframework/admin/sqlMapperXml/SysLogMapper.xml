@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuframework.admin.mapper.SysLogMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.shuframework.admin.model.SysLog">
+		<id column="id" property="id" />
+		<result column="login_name" property="loginName" />
+		<result column="role_name" property="roleName" />
+		<result column="content" property="content" />
+		<result column="client_ip" property="clientIp" />
+		<result column="createtime" property="createtime" />
+		<result column="updatetime" property="updatetime" />
+	</resultMap>
+
+</mapper>
