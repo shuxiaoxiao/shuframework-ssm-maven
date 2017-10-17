@@ -1,0 +1,3 @@
+easyui 版本：1.4.5
+	jquery.easyui.min.js文件有2个bug，3439和12579行多了个逗号 
+

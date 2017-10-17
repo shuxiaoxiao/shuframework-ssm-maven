@@ -1,0 +1,24 @@
+
+.demo-info{
+	padding:0 0 12px 0;
+}
+.demo-tip{
+	display:none;
+}
+
+.form-table{
+	width: 100%;
+	margin: 5px 0px;
+}
+
+.form-td-left{
+	text-align: right;
+	padding: 5px;
+	width: 30%;
+}
+
+.form-input{
+	text-align: left;
+	padding: 5px;
+	width: 265px;
+}
