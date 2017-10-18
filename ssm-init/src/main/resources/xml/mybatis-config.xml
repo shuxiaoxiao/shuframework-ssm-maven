@@ -15,6 +15,8 @@
         <!-- 设置关联对象加载的形态，此处为按需加载字段(加载字段由SQL指 定)，不会加载关联表的所有字段，以提高性能 -->
         <setting name="aggressiveLazyLoading" value="false"/>
         <!-- 日志实现方式。SLF4J、LOG4J2、LOG4J、STDOUT_LOGGING -->
-        <setting name="logImpl" value="LOG4J2"/>
+        <!-- <setting name="logImpl" value="LOG4J"/>
+        <setting name="logImpl" value="LOG4J2"/> -->
+        <setting name="logImpl" value="SLF4J"/> --> <!-- mybatis原则上是不支持logback，但是logback是SLF4J的完美实现者 -->
     </settings>
 </configuration> 
