@@ -16,7 +16,8 @@
         <setting name="aggressiveLazyLoading" value="false"/>
         <!-- 日志实现方式。SLF4J、LOG4J2、LOG4J、STDOUT_LOGGING -->
         <!-- <setting name="logImpl" value="LOG4J"/>
-        <setting name="logImpl" value="LOG4J2"/> -->
+        <setting name="logImpl" value="LOG4J2"/>
         <setting name="logImpl" value="SLF4J"/> --> <!-- mybatis原则上是不支持logback，但是logback是SLF4J的完美实现者 -->
+        <setting name="logImpl" value="LOG4J2"/>
     </settings>
 </configuration> 
