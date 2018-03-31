@@ -11,9 +11,9 @@
 	</appender>
 
 	<appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${catalina.home}/logs/ssm-init-info.log</file>
+		<file>/logs/ssm-init-info.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${catalina.home}/logs/ssm-init-info.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>/logs/ssm-init-info.%d{yyyy-MM-dd}.log</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<maxFileSize>20MB</maxFileSize>
 		</rollingPolicy>
@@ -30,9 +30,9 @@
 	</appender>
 
 	<appender name="debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${catalina.home}/logs/ssm-init-debug.log</file>
+		<file>/logs/ssm-init-debug.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${catalina.home}/logs/ssm-init-debug.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>/logs/ssm-init-debug.%d{yyyy-MM-dd}.log</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<maxFileSize>60MB</maxFileSize>
 		</rollingPolicy>
@@ -50,9 +50,9 @@
 	</appender>
 
 	<appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${catalina.home}/logs/ssm-init-error.log</file>
+		<file>/logs/ssm-init-error.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${catalina.home}/logs/ssm-init-error.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>/logs/ssm-init-error.%d{yyyy-MM-dd}.log</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<maxFileSize>20MB</maxFileSize>
 		</rollingPolicy>

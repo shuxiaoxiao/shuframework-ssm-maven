@@ -22,4 +22,26 @@
 		<result column="updatetime" property="updatetime" />
 	</resultMap>
 
+
+	<!-- <select id="selectUserPage" resultMap="BaseResultMap" > -->
+	<select id="selectUserPage" resultType="com.shuframework.admin.model.SysUser" >
+	<!-- <select id="selectUserPage" resultMap="BaseResultMap" parameterType="java.util.Map"> -->
+		SELECT
+			id, name, login_name AS loginName, pwd, sex, icon,
+			phone_num AS phoneNum, phone_num2 AS phoneNum2, user_type AS userType,
+			address, `state`, deptid, createtime, leavetime, sortid, updatetime
+		FROM sys_user
+		<where>
+            <if test=" name != null and name != '' ">
+                name = #{name}
+            </if>
+            <if test=" startTime != null ">
+                <![CDATA[ and create_time >= #{startTime} ]]>
+            </if>
+            <if test=" endTime != null ">
+                <![CDATA[ and create_time <= #{endTime} ]]>
+            </if>
+        </where>
+	</select>
+
 </mapper>

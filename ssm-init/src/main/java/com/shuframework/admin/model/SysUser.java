@@ -1,14 +1,17 @@
 package com.shuframework.admin.model;
 
 import java.io.Serializable;
+import java.io.Serializable;
+import java.util.Date;
 
+import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
-import java.util.Date;
-import com.baomidou.mybatisplus.enums.IdType;
-import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.enums.IdType;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * <p>
@@ -19,6 +22,7 @@ import java.io.Serializable;
  * @since 2017-10-16
  */
 @TableName("sys_user")
+@ApiModel(description="用户对象user")
 public class SysUser extends Model<SysUser> {
 
     private static final long serialVersionUID = 1L;
@@ -28,6 +32,7 @@ public class SysUser extends Model<SysUser> {
     /**
      * 名称
      */
+	 @ApiModelProperty(value="名称",name="name", example="aa")
 	private String name;
     /**
      * 登录名

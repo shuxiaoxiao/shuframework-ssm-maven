@@ -24,6 +24,7 @@ import com.shuframework.util.json.JsonUtil;
 
 /**
  * @description：AOP 系统日志
+ * 记录所有访问记录，只保存登录、登出、新增，修改，删除，和初始化页面
  * 
  * @author：shuheng
  */
@@ -35,11 +36,16 @@ public class SysLogAop {
     @Autowired
     private SysLogService sysLogService;
 
+    //org.springframework.stereotype.Controller
+    //org.springframework.web.bind.annotation.RestController
     @Pointcut("within(@org.springframework.stereotype.Controller *)")
-    public void cutController() {
-    }
+    public void cutController() {}
+    
+    @Pointcut("within(@org.springframework.web.bind.annotation.RestController *)")
+    public void cutRestController() {}
 
-    @Around("cutController()")
+//    @Around("cutController() && cutRestController()") //2种情况都满足才进
+    @Around("cutController() || cutRestController()")  //满足1种就会进
     public Object recordSysLog(ProceedingJoinPoint point) throws Throwable {
 
         String strMethodName = point.getSignature().getName();
@@ -57,7 +63,7 @@ public class SysLogAop {
             // 获取请求地址  
             String requestPath = request.getRequestURI();
             // 获取输入参数
-            Map<String, Object> inputParamMap = BeanUtil.getParameterMap(request); 
+            Map<String, Object> inputParamMap = BeanUtil.getParameterByNames(request); 
 //            //获取输入参数(方式二)
 //            Map<String, String[]> inputParamMap = request.getParameterMap(); 
             strMessage = String.format("[类名]:%s,[方法]:%s,[请求路径]:%s,[参数]:%s", 
@@ -97,7 +103,7 @@ public class SysLogAop {
     }
     //init开头的方法都暂时记录,为了记录点击次数
     private boolean isWriteLog(String method) {
-        String[] pattern = {"login", "logout", "init", "add", "save", "insert", "edit", "update", "delete", "grant"};
+        String[] pattern = {"login", "logout", "init", "add", "save", "insert", "edit", "update", "delete", "grant", "list"};
         for (String s : pattern) {
             if (method.indexOf(s) > -1) {
                 return true;

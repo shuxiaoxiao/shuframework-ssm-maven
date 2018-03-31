@@ -43,7 +43,7 @@ public class MysqlGenerator {
 		/* 获取 JDBC 配置文件 */
 		Properties props = getProperties();
 		AutoGenerator mpg = new AutoGenerator();
-
+		
 		String outputDir = SystemUtil.USER_DIR + "/" + "src/main/java" + "/";
 //		String outputDir = "/Users/lcm/Desktop/generator/code";
 		final String viewOutputDir = outputDir + "/view/";
